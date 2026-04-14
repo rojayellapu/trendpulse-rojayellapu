@@ -1,7 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
-
 # ---------------- LOAD ---------------- #
 file_path = "data/trends_analysed.csv"
 

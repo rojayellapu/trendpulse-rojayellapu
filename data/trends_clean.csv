@@ -1,0 +1,29 @@
+# Hacker News Dataset (April 2026)
+# Fields: post_id, title, category, score, num_comments, author, collected_at
+
+post_id,title,category,score,num_comments,author,collected_at
+47721953,"AI assistance when contributing to the Linux kernel",technology,323,218,hmokiguess,2026-04-11 15:37:37
+47725403,"Italo Calvino: A traveller in a world of uncertainty",technology,73,14,lermontov,2026-04-11 15:37:37
+47720418,"Launch HN: Twill.ai (YC S25) – Delegate to cloud agents, get back PRs",technology,67,66,danoandco,2026-04-11 15:37:37
+47728653,"France's government is ditching Windows for Linux, says US tech a strategic risk",technology,11,1,pabs3,2026-04-11 15:37:37
+47727960,"Show HN: Pardonned.com – A searchable database of US Pardons",technology,6,0,vidluther,2026-04-11 15:37:37
+47669923,"Clojure on Fennel Part One: Persistent Data Structures",technology,147,16,roxolotl,2026-04-11 15:37:37
+47719486,"France to ditch Windows for Linux to reduce reliance on US tech",technology,504,636,Teever,2026-04-11 15:37:37
+47724921,"Sam Altman's response to Molotov cocktail incident",technology,302,630,jack_hanford,2026-04-11 15:37:37
+47718470,"Code is run more than read (2023)",technology,127,92,facundo_olano,2026-04-11 15:37:37
+47712656,"We've raised $17M to build what comes after Git",technology,315,689,ellieh,2026-04-11 15:37:37
+47726041,"We gave an AI a 3-year Lease. It opened a store",technology,12,1,lukaspetersson,2026-04-11 15:37:37
+47716490,"FBI used iPhone notification data to retrieve deleted Signal messages",technology,587,289,01-_-,2026-04-11 15:37:37
+47727974,"Tesla's supervised self-driving software gets Dutch okay, first in Europe",technology,19,14,nsoonhui,2026-04-11 15:37:37
+47722096,"Molotov cocktail is hurled at home of Sam Altman",technology,229,544,enraged_camel,2026-04-11 15:37:37
+47704804,"How NASA built Artemis II’s fault-tolerant computer",technology,611,222,speckx,2026-04-11 15:37:37
+47725559,"Raising Carthaginian Armies, Part I: Finding Carthaginians",technology,8,0,baud147258,2026-04-11 15:37:37
+47678844,"Show HN: Marimo pair – Reactive Python notebooks as environments for agents",technology,129,34,manzt,2026-04-11 15:37:37
+47728291,"Premium: The Hater's Guide to OpenAI",technology,6,0,mc-serious,2026-04-11 15:37:37
+47707632,"Instant 1.0, a backend for AI-coded apps",technology,208,111,stopachka,2026-04-11 15:37:37
+47718812,"Why do we tell ourselves scary stories about AI?",technology,44,101,lschueller,2026-04-11 15:37:37
+47721207,"HBO Obtains DMCA Subpoena to Unmask 'Euphoria' Spoiler Account on X",technology,105,67,speckx,2026-04-11 15:37:37
+47687273,"Git commands I run before reading any code",technology,2278,494,grepsedawk,2026-04-11 15:37:37
+47728919,"Gen Z workers who fear AI will take their job actively sabotaging its rollout",technology,6,1,9woc,2026-04-11 15:37:37
+47722333,"Chimpanzees in Uganda locked in eight-year 'civil war', say researchers",worldnews,332,192,neversaydie,2026-04-11 15:37:39
+47721946,"JSON formatter Chrome plugin now closed and injecting adware",worldnews,220,110,jkl5xx,2026-04-11 15:37:39

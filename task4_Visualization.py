@@ -99,7 +99,27 @@ plt.close()
 
 print("All charts saved in 'outputs/' folder ")
 
-import os
+# Example chart
+df['category'].value_counts().plot(kind='bar')
+
+plt.title("Top Categories")
+
+# SAVE IMAGE (IMPORTANT)
+plt.savefig("outputs/chart1_categories.png")
+
+plt.close()
+
+# Chart 2
+df['title'].head(10).value_counts().plot(kind='barh')
+plt.title("Top Stories")
+plt.savefig("outputs/chart2_top_stories.png")
+plt.close()
+
+# Chart 3
+df.plot.scatter(x='score', y='comments')
+plt.title("Score vs Comments")
+plt.savefig("outputs/chart3_scatter.png")
+plt.close()
 
 # create outputs folder if not exists
 os.makedirs("outputs", exist_ok=True)

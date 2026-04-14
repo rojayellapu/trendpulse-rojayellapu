@@ -98,3 +98,8 @@ plt.savefig("outputs/dashboard.png", dpi=300)
 plt.close()
 
 print("All charts saved in 'outputs/' folder ")
+
+import os
+
+# create outputs folder if not exists
+os.makedirs("outputs", exist_ok=True)

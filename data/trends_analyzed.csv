@@ -1,0 +1,6 @@
+post_id,title,category,score,num_comments,author,collected_at,engagement,is_popular
+47721953,"AI assistance when contributing to the Linux kernel",technology,323,218,hmokiguess,2026-04-11 15:37:37,0.673,True
+47725403,"Italo Calvino: A traveller in a world of uncertainty",technology,73,14,lermontov,2026-04-11 15:37:37,0.189,False
+47720418,"Launch HN: Twill.ai (YC S25) – Delegate to cloud agents, get back PRs",technology,67,66,danoandco,2026-04-11 15:37:37,0.971,False
+47719486,"France to ditch Windows for Linux to reduce reliance on US tech",technology,504,636,Teever,2026-04-11 15:37:37,1.259,True
+47724921,"Sam Altman's response to Molotov cocktail incident",technology,302,630,jack_hanford,2026-04-11 15:37:37,2.079,True

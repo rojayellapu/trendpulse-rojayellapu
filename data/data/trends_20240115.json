@@ -1,0 +1,95 @@
+import pandas as pd
+import numpy as np
+import os
+import json
+
+# ---------------- LOAD ---------------- #
+file_path = "data/raw_trends.json"  # your input file
+
+with open(file_path, "r") as f:
+    data = json.load(f)
+
+df = pd.DataFrame(data)
+
+print(f"Loaded: {df.shape}")
+
+# ---------------- CLEAN ---------------- #
+
+# Remove duplicates (keep highest score version)
+df = df.sort_values("score", ascending=False)
+df = df.drop_duplicates(subset=["post_id"], keep="first")
+
+print(f"After removing duplicates: {df.shape}")
+
+# Fix missing values
+df["num_comments"] = pd.to_numeric(df["num_comments"], errors="coerce").fillna(0).astype(int)
+df["score"] = pd.to_numeric(df["score"], errors="coerce").fillna(0).astype(int)
+
+# Remove low-quality posts
+df = df[df["score"] > 10]
+
+# Clean titles
+df["title"] = df["title"].astype(str).str.strip()
+
+# Remove very short / bad titles
+df = df[df["title"].str.len() > 15]
+
+print(f"After cleaning: {df.shape}")
+
+# ---------------- FIX CATEGORY (SMART) ---------------- #
+
+def recategorize(title):
+    t = title.lower()
+
+    if any(x in t for x in ["ai", "code", "software", "linux", "api", "cloud", "programming"]):
+        return "technology"
+    elif any(x in t for x in ["war", "government", "president", "country", "attack"]):
+        return "worldnews"
+    elif any(x in t for x in ["game", "team", "player", "league", "match"]):
+        return "sports"
+    elif any(x in t for x in ["research", "study", "nasa", "space", "physics", "biology"]):
+        return "science"
+    elif any(x in t for x in ["movie", "music", "netflix", "show", "film"]):
+        return "entertainment"
+    else:
+        return "other"
+
+df["category"] = df["title"].apply(recategorize)
+
+# ---------------- FEATURE ENGINEERING ---------------- #
+
+# Engagement score
+df["engagement"] = df["num_comments"] / (df["score"] + 1)
+
+# Trend score (better ranking)
+df["trend_score"] = (
+    df["score"] * 0.6 +
+    df["num_comments"] * 0.4
+)
+
+# Popular flag
+df["is_popular"] = df["score"] > df["score"].mean()
+
+# ---------------- SORT ---------------- #
+df = df.sort_values("trend_score", ascending=False)
+
+# ---------------- SAVE ---------------- #
+
+os.makedirs("data", exist_ok=True)
+
+df.to_csv("data/final_trends.csv", index=False)
+df.to_json("data/final_trends.json", orient="records", indent=4)
+
+print(f"Final dataset saved: {df.shape}")
+
+# ---------------- INSIGHTS ---------------- #
+
+print("\nTop 5 Trending Stories:")
+print(df[["title", "trend_score"]].head())
+
+print("\nCategory Distribution:")
+print(df["category"].value_counts())
+
+print("\nMost Engaging Story:")
+top_eng = df.sort_values("engagement", ascending=False).iloc[0]
+print(f"{top_eng['title']} ({top_eng['engagement']:.2f})")
